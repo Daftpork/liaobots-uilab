@@ -1,0 +1,195 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─── 来自原项目 styles/globals.css ─── */
+/* 仅保留 uilab 页面用到的 class,完全 1:1 复刻视觉 */
+
+html,
+body {
+  height: 100%;
+}
+body {
+  font-family: -apple-system, 'system-ui', 'Helvetica Neue', Tahoma,
+    'PingFang SC', 'Microsoft Yahei', Arial, 'Hiragino Sans GB', sans-serif,
+    'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+div,
+p,
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: -apple-system, 'system-ui', 'Helvetica Neue', Tahoma,
+    'PingFang SC', 'Microsoft Yahei', Arial, 'Hiragino Sans GB', sans-serif,
+    'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+}
+input:focus {
+  outline: none;
+}
+
+#root {
+  height: 100%;
+}
+
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #ccc;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: #aaa;
+}
+::-webkit-scrollbar-track:hover {
+  background-color: #f2f2f2;
+}
+::-webkit-scrollbar-corner {
+  background-color: transparent;
+}
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+/* hover primitives */
+.hover-item {
+  @apply cursor-pointer rounded-[12px] px-3 py-2 transition-colors hover:bg-[#F5F5F5] dark:hover:bg-white/10;
+}
+.hover-icon {
+  @apply flex h-[36px] w-[36px] cursor-pointer items-center justify-center rounded-full transition-colors hover:bg-[#F5F5F5] dark:hover:bg-white/10;
+}
+.hover-item-dark {
+  @apply cursor-pointer rounded-[12px] px-3 py-2 transition-colors hover:bg-white/15;
+}
+.hover-icon-dark {
+  @apply flex h-[36px] w-[36px] cursor-pointer items-center justify-center rounded-full transition-colors hover:bg-white/15;
+}
+
+/* popover */
+.popover {
+  @apply rounded-[16px] border border-[#e8e8e8] bg-white px-[6px] py-[6px] shadow-[0px_4px_16px_-2px_rgba(0,0,0,0.1)] outline-none;
+  @apply dark:border-white/20 dark:bg-[#1E1E20];
+}
+.popover-item {
+  @apply flex w-full cursor-pointer select-none items-center gap-[12px] rounded-[8px] px-[14px] py-[12px] text-[14px] leading-normal text-[#141414] transition-colors hover:bg-[#F5F5F5];
+  @apply dark:text-white dark:hover:bg-white/10;
+}
+.popover-divider {
+  @apply mx-[10px] my-[4px] h-px bg-[#ededed];
+  @apply dark:bg-white/20;
+}
+
+/* alert dialog */
+.alert-dialog-overlay {
+  @apply bg-black/10;
+}
+.alert-dialog-body {
+  @apply px-6 pb-5 pt-6;
+}
+.alert-dialog-header {
+  @apply mb-2 flex items-start gap-2 pr-10;
+}
+.alert-dialog-icon-error {
+  @apply mt-0.5 h-5 w-5 shrink-0 text-[#ef4444];
+}
+.alert-dialog-icon-success {
+  @apply mt-0.5 h-5 w-5 shrink-0 text-[#16a34a];
+}
+.alert-dialog-title {
+  @apply text-[18px] font-semibold leading-snug text-[#141414] dark:text-white;
+}
+.alert-dialog-description {
+  @apply text-[14px] leading-5 text-[#6b7280] dark:text-[#9ca3af];
+}
+.alert-dialog-footer {
+  @apply !justify-end !border-t-0 px-6 pb-5 pt-1;
+}
+
+/* pill buttons */
+.btn-pill-outline {
+  @apply cursor-pointer rounded-full border border-[#e4e4e7] bg-white px-4 py-1.5 text-[14px] font-medium text-[#141414] transition-colors hover:bg-[#f4f4f5];
+  @apply dark:border-[#2e2e2e] dark:bg-transparent dark:text-white dark:hover:bg-white/10;
+}
+.btn-pill-solid {
+  @apply cursor-pointer rounded-full bg-[#141414] px-4 py-1.5 text-[14px] font-medium text-white transition-colors hover:bg-[#2e2e2e];
+  @apply dark:bg-white dark:text-[#141414] dark:hover:bg-white/90;
+}
+.btn-pill-solid-error {
+  @apply cursor-pointer rounded-full bg-[#141414] px-4 py-1.5 text-[14px] font-medium text-white transition-colors hover:bg-[#2e2e2e];
+  @apply dark:bg-white dark:text-[#141414] dark:hover:bg-white/90;
+}
+
+/* pill tabs */
+.pill-tabs {
+  display: inline-flex;
+  border-radius: 9999px;
+  background-color: #f4f4f5;
+  padding: 3px;
+}
+.dark .pill-tabs {
+  background-color: #2a2a2c;
+}
+.pill-tabs-item {
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  border-radius: 9999px;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+  height: 36px;
+  font-size: 14px;
+  font-weight: 500;
+  transition: color 0.15s ease, background-color 0.15s ease, box-shadow 0.15s ease;
+  color: #737373;
+}
+.dark .pill-tabs-item {
+  color: #a1a1aa;
+}
+.pill-tabs-item:hover {
+  color: #141414;
+}
+.dark .pill-tabs-item:hover {
+  color: #ffffff;
+}
+.pill-tabs-item--active {
+  background-color: #ffffff;
+  color: #141414;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 0 0 0 0.5px rgba(0, 0, 0, 0.05);
+}
+.dark .pill-tabs-item--active {
+  background-color: #3a3a3c;
+  color: #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4), 0 0 0 0.5px rgba(255, 255, 255, 0.08);
+}
+
+/* dialog */
+.dialog-overlay {
+  @apply fixed inset-0 z-50 flex flex-col items-center justify-center overflow-y-auto bg-black/50 p-4;
+}
+.dialog {
+  @apply relative w-full rounded-[20px] border border-[#e5e7eb] bg-white outline-none;
+  @apply dark:border-[#2e2e2e] dark:bg-[#1E1E20];
+  box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+}
+.dialog-title {
+  @apply border-b border-[#f0f0f0] px-6 py-5 text-[17px] font-semibold leading-tight tracking-tight text-[#141414];
+  @apply dark:border-[#2e2e2e] dark:text-white;
+}
+.dialog-body {
+  @apply p-5;
+}
+.dialog-footer {
+  @apply flex items-center justify-between gap-3 border-t border-[#f0f0f0] px-6 py-4;
+  @apply dark:border-[#2e2e2e];
+}
+.dialog-close {
+  @apply hover-icon absolute right-3 top-3 z-[101] text-[#6b7280];
+  @apply dark:text-[#9ca3af] dark:hover:bg-white/15;
+}
